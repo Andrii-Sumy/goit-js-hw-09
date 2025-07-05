@@ -16,3 +16,117 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  padding: 24px 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.gallery-item {
+  flex-basis: auto;
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-image {
+  display: block;
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.045);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 24px;
+  width: 360px;
+  height: 296px
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 342px;
+  height: 40px;
+  margin-top: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: .04em;
+  color: #2e2f42;
+  padding: 0 0 0 16px;
+  background-color: #fff
+}
+
+input:hover {
+  border: 1px solid #000
+}
+
+textarea {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 342px;
+  margin-top: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: .04em;
+  color: #2e2f42;
+  padding: 0 0 0 16px
+}
+
+textarea:hover {
+  border: 1px solid #000
+}
+
+label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: .04em;
+  color: #2e2f42;
+  margin-bottom: 16px
+}
+
+button {
+  background: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: .04em;
+  color: #fff;
+  border-color: #4e75ff
+}
+
+button:hover {
+  background: #6c8cff
+}

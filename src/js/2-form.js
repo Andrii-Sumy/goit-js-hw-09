@@ -13,26 +13,25 @@ if (savedData) {
   form.elements.message.value = formData.message || '';
 }
 
-const saveFormData = () => {
+form.addEventListener('input', event => {
+  const { name, value } = event.target;
+
+  if (!formData.hasOwnProperty(name)) return;
+
+  let cleanValue = value;
+
+  if (name === 'email') {
+    cleanValue = cleanValue.replace(/[а-яА-ЯёЁїЇіІєЄ]/g, '');
+    cleanValue = cleanValue.trim();
+    event.target.value = cleanValue;
+  }
+
+  if (name === 'message') {
+    cleanValue = cleanValue.trimStart();
+  }
+
+  formData[name] = cleanValue;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-};
-
-form.elements.email.addEventListener('input', event => {
-  let value = event.target.value;
-
-  value = value.replace(/[а-яА-ЯёЁїЇіІєЄ]/g, '');
-
-  value = value.trim();
-
-  event.target.value = value;
-  formData.email = value;
-
-  saveFormData();
-});
-
-form.elements.message.addEventListener('input', event => {
-  formData.message = event.target.value.trim();
-  saveFormData();
 });
 
 form.addEventListener('submit', event => {
